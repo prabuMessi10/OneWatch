@@ -37,10 +37,6 @@ const Search = () => {
             <div className="h-24 md:h-32"></div>
 
             <div className="px-4 md:px-8 lg:px-10 pb-10">
-
-
-
-
                 <h2 className="text-2xl md:text-3xl text-white font-bold mb-4 md:mb-6">Results for "{query}"</h2>
 
                 {loading ? (

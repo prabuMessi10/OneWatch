@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getMovieDetails, getRecommendations, addToList, removeFromList, checkInList } from '../services/api';
+import { useAuth } from '../context/AuthContext';
 import Navbar from '../components/Navbar';
 import TrailerModal from '../components/TrailerModal';
 import Row from '../components/Row'; // Added Row
@@ -20,7 +21,7 @@ const MovieDetails = () => {
     const [recommendations, setRecommendations] = useState([]); // State for recommendations
     const [isInList, setIsInList] = useState(false);
     const [addingToList, setAddingToList] = useState(false);
-    const user = JSON.parse(localStorage.getItem('userInfo'));
+    const { user } = useAuth();
 
 
     useEffect(() => {

@@ -3,8 +3,14 @@ const axios = require('axios');
 const TMDB_BASE_URL = process.env.TMDB_BASE_URL || 'https://api.themoviedb.org/3';
 const API_KEY = process.env.TMDB_API_KEY;
 
+const https = require('https');
+
+console.log(`TMDB Service Initialized. API Key: ${API_KEY ? API_KEY.substring(0, 4) + '...' : 'MISSING'}`);
+
 const tmdbClient = axios.create({
     baseURL: TMDB_BASE_URL,
+    timeout: 10000,
+    httpsAgent: new https.Agent({ keepAlive: true, family: 4 }), // Force IPv4 and Keep-Alive
     params: {
         api_key: API_KEY,
     }
@@ -73,6 +79,16 @@ exports.fetchByGenre = async (genreId) => {
     } catch (error) {
         console.error('TMDB Error:', error.response?.data || error.message);
         throw new Error('Failed to fetch movies by genre');
+    }
+};
+
+exports.fetchRecommendations = async (id) => {
+    try {
+        const response = await tmdbClient.get(`/movie/${id}/recommendations`);
+        return response.data;
+    } catch (error) {
+        console.error('TMDB Error:', error.response?.data || error.message);
+        throw new Error('Failed to fetch recommendations');
     }
 };
 

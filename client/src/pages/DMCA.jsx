@@ -11,7 +11,7 @@ const DMCA = () => {
                 <div className="bg-zinc-900/50 p-8 rounded-lg border border-zinc-800">
                     <h2 className="text-2xl font-bold text-white mb-6">DMCA takedown requirements</h2>
                     <p className="mb-6 leading-relaxed">
-                        We take the intellectual property rights of others seriously and require that our Users do the same. The Digital Millennium Copyright Act (DMCA) established a process for addressing claims of copyright infringement. If you own a copyright or have authority to act on behalf of a copyright owner and want to report a claim that a third party is infringing that material on or through TrailerFlix's services, please submit a DMCA report, and we will take appropriate action.
+                        We take the intellectual property rights of others seriously and require that our Users do the same. The Digital Millennium Copyright Act (DMCA) established a process for addressing claims of copyright infringement. If you own a copyright or have authority to act on behalf of a copyright owner and want to report a claim that a third party is infringing that material on or through One Watch's services, please submit a DMCA report, and we will take appropriate action.
                     </p>
 
                     <h3 className="text-xl font-bold text-white mb-4">DMCA Report requirements</h3>
@@ -27,7 +27,7 @@ const DMCA = () => {
 
                     <div className="mt-8 p-6 bg-black/40 rounded border border-zinc-800 text-center">
                         <p className="mb-2 text-gray-300">Your DMCA take down request should be submit here:</p>
-                        <a href="mailto:trailerflix.dmca@proton.me" className="text-yellow-500 font-bold hover:underline text-lg">trailerflix.dmca@proton.me</a>
+                        <a href="mailto:onewatch.dmca@proton.me" className="text-yellow-500 font-bold hover:underline text-lg">onewatch.dmca@proton.me</a>
                     </div>
 
                     <p className="mt-6 text-sm text-gray-500 text-center">

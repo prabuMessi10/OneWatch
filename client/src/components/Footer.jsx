@@ -10,7 +10,7 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     {/* Left: Copyright */}
                     <div className="text-sm md:text-base font-medium text-gray-400 order-2 md:order-1">
-                        <p>© 2025 TrailerFlix. Built with React.</p>
+                        <p>© 2025 One Watch. Built with React.</p>
                     </div>
 
                     {/* Right: TMDB Attribution */}

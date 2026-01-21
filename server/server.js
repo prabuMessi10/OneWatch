@@ -26,9 +26,6 @@ app.use('/api/auth', authRoutes);
 app.use('/api/watchlist', watchlistRoutes);
 app.use('/api/user', userRoutes);
 
-
-
-
 // MongoDB Connection (Optional for Phase 1 but good to have)
 if (process.env.MONGO_URI) {
     mongoose.connect(process.env.MONGO_URI)
