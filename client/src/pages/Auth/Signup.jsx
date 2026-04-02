@@ -29,7 +29,7 @@ const Signup = () => {
 
         try {
             const data = await register(username, email, password);
-            navigate('/login', { state: { message: "Account created successfully! Please login." } });
+            navigate('/verify-email', { state: { email } });
         } catch (err) {
             setError(err.response?.data?.message || 'Registration failed');
         } finally {

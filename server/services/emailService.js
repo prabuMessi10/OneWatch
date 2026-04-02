@@ -1,7 +1,9 @@
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
@@ -27,7 +29,11 @@ const sendVerificationEmail = async (email, code) => {
             </div>
         `
     };
-    await transporter.sendMail(mailOptions);
+    try {
+        await transporter.sendMail(mailOptions);
+    } catch (error) {
+        console.error('Email sending failed (network blocked). Verification Code is:', code);
+    }
 };
 
 const sendPasswordResetEmail = async (email, code) => {
@@ -49,7 +55,11 @@ const sendPasswordResetEmail = async (email, code) => {
             </div>
         `
     };
-    await transporter.sendMail(mailOptions);
+    try {
+        await transporter.sendMail(mailOptions);
+    } catch (error) {
+        console.error('Email sending failed (network blocked). Reset Code is:', code);
+    }
 };
 
 module.exports = { sendVerificationEmail, sendPasswordResetEmail };
