@@ -38,7 +38,7 @@ const sendVerificationEmail = async (email, code) => {
 
 const sendPasswordResetEmail = async (email, code) => {
     const mailOptions = {
-        from: `"TrailerFlix" <${process.env.EMAIL_USER}>`,
+        from: `"Onewatch" <${process.env.EMAIL_USER}>`,
         to: email,
         subject: 'Reset Password - Onewatch',
         html: `
